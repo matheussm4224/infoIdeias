@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: site
+    security_opt:
+    - apparmor=unconfined
+    ports:
+    - "80:80"
+    volumes:
+    -  ".:/var/www/html/"
